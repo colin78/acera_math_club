@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+\usepackage{enumerate, amsmath, amsthm, amssymb,multirow}
+\usepackage{graphicx}
+
+\addtolength{\oddsidemargin}{-.5in}
+\addtolength{\evensidemargin}{-.5in} \addtolength{\textwidth}{1.0in}
+\begin{document}
+
+\title{Mathematical Modeling Solutions}
+
+\maketitle
+
+\section{Furniture Company}
+Let $x, y, z$ be the number of tables, chairs, and desks that you decide to produce respectively.  
+
+\begin{equation}
+\label{eq:furniture_opt}
+\begin{array}{rl}
+\max~ & 60x + 40y + 100z \vspace{3pt}\\
+\textup{s.t.}~ & 6x + 2y + 5z \leq 500 \vspace{3pt}\\
+& 2x + 2y + 3z \leq 300 \vspace{3pt}\\
+& 4x + 2y + 6z \leq 450 \vspace{3pt}\\
+& x, y, z \geq 0 \vspace{3pt}\\
+& x, y, z ~\textup{integer}\\
+\end{array}
+\end{equation}
+
+\section{New England Power}
+Let $AW, BW, CW, DW$ be the amounts of gigawatts supplied to Western Massachusetts from power plants A, B, C, D respectively, and let $AE, BE, CE, DE$ be the amounts of gigawatts supplied to Eastern Massachusetts from power plants A, B, C, D respectively.
+
+\begin{equation}
+\label{eq:new_england_power_opt}
+\begin{array}{rl}
+\min~ & 2200AE + 2200BE + 4000CE + 2300DE + 2800AW + 2200BW + 3000CW + 3100DW \vspace{3pt}\\
+\textup{s.t.}~ & AE + BE + CE + DE \geq 900,000 \vspace{3pt}\\
+& AW + BW + CW + DW \geq 700,000 \vspace{3pt}\\
+& AW + AE \leq 800,000 \vspace{3pt}\\
+& BW + BE \leq 400,000 \vspace{3pt}\\
+& CW + CE \leq 600,000 \vspace{3pt}\\
+& DW + DE \leq 350,000 \vspace{3pt}\\
+& AW + AE \leq \frac{1}{4}(AE + BE + CE + DE + AW + BW + CW + DW) \vspace{3pt}\\
+& AE, BE, CE, DE, AW, BW, CW, DW \geq 0 \\
+\end{array}
+\end{equation}
+
+\end{document}
+
+
+

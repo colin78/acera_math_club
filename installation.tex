@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{enumerate, amsmath, amsthm, amssymb,multirow}
+\usepackage{graphicx}
+
+\addtolength{\oddsidemargin}{-.5in}
+\addtolength{\evensidemargin}{-.5in} \addtolength{\textwidth}{1.0in}
+\begin{document}
+
+\title{Installation Instructions}
+
+\maketitle
+
+\section{Install Julia}
+
+Download julia-0.4.2 from the website \texttt{julialang.org}.  Run the executable.  
+
+Open up a julia terminal.  Install several packages using the following code:\\
+
+Pkg.add(``JuMP'')
+
+Pkg.add(``DataFrames'')
+
+Pkg.add(``Gadfly'')
+
+Pkg.add(``Cairo'')\\
+
+Make sure the following code works:\\
+
+using JuMP
+
+using DataFrames
+
+using Gadfly
+
+using Cairo
+
+\section{Install Sublime Text 3}
+
+Download Sublime Text 3 from the website \texttt{sublimetext.org}.  Run the executable.
+
+Install the sublime-julia package.  
+
+\section{Set your Julia working directory}
+
+Create a new folder on your desktop where you can save all of your julia programs.  Name it something simple like ``optimization''.  Open up a new file in Sublime Text 3.  Add the path to the working directory to this file, using the command: cd(``path\_here'').  For example, it might be: cd("C:/Users/colin/Documents/optimization").  Windows users, use ``//'' instead of ``/'' in the path name.  \\
+
+Save this file as ``.juliarc.jl'' in the same folder as your ``.julia\_history.jl'' file.  
+
+\section{Command line tips}
+In the Julia terminal, use {\bf ;} to switch to shell commands.  This allows you to navigate to different directories in the computer.  {\bf ls} lists the files in the current directory.  \\
+
+{\bf cd} stands for ``change directory''.  {\bf cd} \emph{folder} opens up \emph{folder} in the present directory, and {\bf cd ..} goes up one level. \\
+
+Test out these commands.  Open up the Julia terminal, and type in {\bf ;}, then {\bf ls}.  The files in your current folder, ``optimization'', should pop up.  Pop out of the folder by typing in {\bf ;}, then {\bf cd ..}.  Type in {\bf ;}, then {\bf ls} to see
+all of the folders in that directory.  Return to the directory by typing in {\bf ;}, then {\bf cd optimization}.\\
+
+To run a julia file, use the command {\bf include(``filename.jl'')}.  You can use this command as long as ``filename.jl'' is in the current
+directory.  
+\end{document}
