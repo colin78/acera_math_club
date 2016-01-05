@@ -1,6 +1,8 @@
 \documentclass[12pt]{article}
 \usepackage{enumerate, amsmath, amsthm, amssymb,multirow}
 \usepackage{graphicx}
+\usepackage{hyperref}
+
 
 \addtolength{\oddsidemargin}{-.5in}
 \addtolength{\evensidemargin}{-.5in} \addtolength{\textwidth}{1.0in}
@@ -12,48 +14,112 @@
 
 \section{Install Julia}
 
-Download julia-0.4.2 from the website \texttt{julialang.org}.  Run the executable.  
+\begin{enumerate}
 
-Open up a julia terminal.  Install several packages using the following code:\\
+\item Download julia-0.4.2 from \url{http://julialang.org/downloads/}. 
 
-Pkg.add(``JuMP'')
+\item Open up a julia terminal.  
 
-Pkg.add(``DataFrames'')
+\item Install several packages using the following code, line by line:
 
-Pkg.add(``Gadfly'')
+Pkg.add(``JuMP'') \\
+Pkg.add(``DataFrames'')\\
+Pkg.add(``Gadfly'')\\
+Pkg.add(``Cairo'')
+%\\ Pkg.add(``ZMQ'')\\
+%Pkg.add(``IJulia'')\\
 
-Pkg.add(``Cairo'')\\
+\item Make sure the following code works:
 
-Make sure the following code works:\\
+using JuMP \\
+using DataFrames \\
+using Gadfly \\
+using Cairo 
+%\\ using ZMQ \\
+%using IJulia \\
 
-using JuMP
+\item At this point, you have the Julia programming language successfully installed on your computer!  In the terminal prompt, you can experiment by typing in some math and then ``enter''.  For example, you can try: ``2+2'', ``3\string^2'', and ``12*10''.  
+\end{enumerate}
 
-using DataFrames
+\section{Install Sublime Text 2}
 
-using Gadfly
+\begin{enumerate}
 
-using Cairo
+\item Download Sublime Text 2 from \url{http://www.sublimetext.com/2}.  
 
-\section{Install Sublime Text 3}
+\item Go to the webpage \url{https://packagecontrol.io/installation\#Manual} and copy the code block under ``Sublime Text 2''.
 
-Download Sublime Text 3 from the website \texttt{sublimetext.org}.  Run the executable.
+\item Open up Sublime Text 2 and click on ``View $\rightarrow$ Show Console''.
 
-Install the sublime-julia package.  
+\item Paste the code block and hit ``enter''.
+
+\item Restart Sublime Text 2.  
+
+\item Press ``ctrl + shift + p'' (Windows) or ``cmd + shift + p'' (Mac) to open up a search bar.  Begin typing ``Install Package'' and click on ``Package Control: Install Package''.  
+
+\item Begin typing ``Julia'' and click on ``Julia''.  The package for Julia syntax highlighting will automatically install.  
+
+\item Open up ``jump\_start.jl''.  Click on ``View $\rightarrow$ Syntax $\rightarrow$ Julia'' to view the code with syntax highlighting.  
+
+\item (Optional) Click on ``Preferences $\rightarrow$ Color Scheme $\rightarrow$ Eiffel'' to change the color scheme.  
+
+\end{enumerate}
 
 \section{Set your Julia working directory}
 
-Create a new folder on your desktop where you can save all of your julia programs.  Name it something simple like ``optimization''.  Open up a new file in Sublime Text 3.  Add the path to the working directory to this file, using the command: cd(``path\_here'').  For example, it might be: cd("C:/Users/colin/Documents/optimization").  Windows users, use ``//'' instead of ``/'' in the path name.  \\
+\begin{enumerate}
 
-Save this file as ``.juliarc.jl'' in the same folder as your ``.julia\_history.jl'' file.  
+\item Create a new folder on your desktop where you can save all of your Julia programs.  Name it something simple like ``optimization''.  
+
+\item Create a new file in Sublime Text 2 named ``.juliarc.jl''.  
+
+\item In this file, type: cd(``\emph{path\_here}'').  In place of \emph{path\_here}, put the file path on the computer to the ``optimization'' folder.  For example, it might be: \\\\
+cd (``C:$\backslash\backslash$Users$\backslash\backslash$colin$\backslash\backslash$Documents$\backslash\backslash$optimization").  \\
+
+\item Search your computer for the file ``.julia\_history.jl''.  
+
+\item Save ``.juliarc.jl'' in the same folder as ``.julia\_history.jl''.   
+
+\item To test that the working directory is set up correctly, open up a new Julia terminal and type in {\bf ;} and then {\bf pwd}.  Check that the folders match up.  
+
+\end{enumerate}
 
 \section{Command line tips}
-In the Julia terminal, use {\bf ;} to switch to shell commands.  This allows you to navigate to different directories in the computer.  {\bf ls} lists the files in the current directory.  \\
+In the Julia terminal, use {\bf ;} to switch to shell commands, and {\bf backspace} to switch back\footnote{These are also called ``command line'' or ``BaSH'' commands. }.  These commands allow you to navigate to different directories in the computer.   Here are a few of the most useful ones:\\
+
+{\bf ls} lists the files in the current directory.  \\
 
 {\bf cd} stands for ``change directory''.  {\bf cd} \emph{folder} opens up \emph{folder} in the present directory, and {\bf cd ..} goes up one level. \\
 
-Test out these commands.  Open up the Julia terminal, and type in {\bf ;}, then {\bf ls}.  The files in your current folder, ``optimization'', should pop up.  Pop out of the folder by typing in {\bf ;}, then {\bf cd ..}.  Type in {\bf ;}, then {\bf ls} to see
-all of the folders in that directory.  Return to the directory by typing in {\bf ;}, then {\bf cd optimization}.\\
+{\bf pwd} stands for ``pass working directory''.  This tells you which directory you are currently in.  \\
+
+Test out these commands below.  
+
+\begin{enumerate}
+
+\item (Optional) Open up the Julia terminal, and type in {\bf ;}, then {\bf ls}.  The files in your current folder, ``optimization'', should pop up.  
+
+\item (Optional) Pop out of the folder by typing in {\bf ;}, then {\bf cd ..}.  
+
+\item (Optional) Type in {\bf ;}, then {\bf ls} to see all of the folders in that directory.  
+
+\item (Optional) Return to the directory by typing in {\bf ;}, then {\bf cd optimization}.
+
+\end{enumerate}
 
 To run a julia file, use the command {\bf include(``filename.jl'')}.  You can use this command as long as ``filename.jl'' is in the current
 directory.  
+
+\section{Julia tips}
+
+\begin{enumerate}
+
+\item (Optional) Visit the webpage \url{http://docs.julialang.org/en/release-0.4/} for an introduction to the Julia programming language.  
+
+\item (Optional) For a condensed list of many useful Julia commands, see ``Julia-cheatsheet.pdf''.  
+
+\item (Optional) When you are typing in code in the Julia terminal, you can use ``tab'' to auto-complete certain phrases.  This is especially useful for shell commands.  
+
+\item {\bf Experiment and have fun!}  You learn programming languages by trying things out yourself, looking stuff up on the internet, and writing your own code.  
+\end{enumerate}
 \end{document}
