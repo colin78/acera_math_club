@@ -23,66 +23,66 @@ How many computers of each type should we build? \\
 
 For this problem, assume that fractional computers are worthless, and remember that we cannot build negative computers!  
 
-\section{Formulation}
-
-Let $x$ and $y$ be the number of Type X and Type Y computers that you decide to build respectively.  
-
-\subsection{Objective Function}
-We are trying to maximize the total value of the computers that we build.  Because Type X and Type Y computers are
-worth \$1000 and \$4000 respectively, their total value is $1000x + 4000y$.  Therefore, the objective function is:
-\[
-\max 1000x + 4000y
-\]
-
-\subsection{Constraints}
-We need to write constraints for each of the limited resources, which are monitors and processors.
-Because Type X and Type Y computers require 1 monitor each, the total number of monitors that we use
-is $x + y$.  We only have 3 monitors, so this is an upper bound for the total number of monitors.  Therefore,
-the monitor constraint is:
-\[
-x + y \leq 3
-\]
-
-Because Type X and Type Y computers require 5 processors and 3 processors respectively, the total number of processors
-that we use is $5x + 3y$.  We only have 11 processors, so this is an upper bound for the total number of processors.  Therefore,
-the processor constraint is:
-\[
-5x + 3y \leq 11
-\]
-
-\subsection{Decision Variables}
-The decision variables are $x$ and $y$, which were defined at the beginning of this section.  Since we cannot build
-negative computers, we need to add the constraints $x \ge 0$ and $y \ge 0$.  Also, we cannot build more than 3 of the Type Y computers, so we add the constraint $y \leq 3$.  Therefore, we have:
-\[
-x \geq 0
-\]
-\[
-0 \le y \leq 3
-\]
-
-Since we do not want to build fractional computers, we add the integer constraint for $x$ and $y$:
-\[
-x, y ~\textup{integer}
-\]
-
-\subsection{Final Formulation}
-Putting all of the previous parts together, we obtain the full optimization model:
-
-\begin{equation}
-\label{eq:opt_1}
-\begin{array}{rl}
-\max~ & 1000x + 4000y \vspace{3pt}\\
-\textup{s.t.}~ & x + y \leq 3 \vspace{3pt}\\
-& 5x + 3y \leq 11 \vspace{3pt}\\
-& x \geq 0 \vspace{3pt}\\
-& 0 \le y \leq 3 \vspace{3pt}\\
-& x, y ~\textup{integer}\\
-\end{array}
-\end{equation}
-
-To check that we have covered all of the necessary constraints, read through the problem again and
-see if we have used all of the information that was given to us.  Now, we are ready to code up the
-optimization problem and solve it on the computer!  
+%\section{Formulation}
+%
+%Let $x$ and $y$ be the number of Type X and Type Y computers that you decide to build respectively.  
+%
+%\subsection{Objective Function}
+%We are trying to maximize the total value of the computers that we build.  Because Type X and Type Y computers are
+%worth \$1000 and \$4000 respectively, their total value is $1000x + 4000y$.  Therefore, the objective function is:
+%\[
+%\max 1000x + 4000y
+%\]
+%
+%\subsection{Constraints}
+%We need to write constraints for each of the limited resources, which are monitors and processors.
+%Because Type X and Type Y computers require 1 monitor each, the total number of monitors that we use
+%is $x + y$.  We only have 3 monitors, so this is an upper bound for the total number of monitors.  Therefore,
+%the monitor constraint is:
+%\[
+%x + y \leq 3
+%\]
+%
+%Because Type X and Type Y computers require 5 processors and 3 processors respectively, the total number of processors
+%that we use is $5x + 3y$.  We only have 11 processors, so this is an upper bound for the total number of processors.  Therefore,
+%the processor constraint is:
+%\[
+%5x + 3y \leq 11
+%\]
+%
+%\subsection{Decision Variables}
+%The decision variables are $x$ and $y$, which were defined at the beginning of this section.  Since we cannot build
+%negative computers, we need to add the constraints $x \ge 0$ and $y \ge 0$.  Also, we cannot build more than 3 of the Type Y computers, so we add the constraint $y \leq 3$.  Therefore, we have:
+%\[
+%x \geq 0
+%\]
+%\[
+%0 \le y \leq 3
+%\]
+%
+%Since we do not want to build fractional computers, we add the integer constraint for $x$ and $y$:
+%\[
+%x, y ~\textup{integer}
+%\]
+%
+%\subsection{Final Formulation}
+%Putting all of the previous parts together, we obtain the full optimization model:
+%
+%\begin{equation}
+%\label{eq:opt_1}
+%\begin{array}{rl}
+%\max~ & 1000x + 4000y \vspace{3pt}\\
+%\textup{s.t.}~ & x + y \leq 3 \vspace{3pt}\\
+%& 5x + 3y \leq 11 \vspace{3pt}\\
+%& x \geq 0 \vspace{3pt}\\
+%& 0 \le y \leq 3 \vspace{3pt}\\
+%& x, y ~\textup{integer}\\
+%\end{array}
+%\end{equation}
+%
+%To check that we have covered all of the necessary constraints, read through the problem again and
+%see if we have used all of the information that was given to us.  Now, we are ready to code up the
+%optimization problem and solve it on the computer!  
 
 \section{More Examples}
 
@@ -101,6 +101,12 @@ To optimize the chances of a successful mission, General Leia wants to maximize 
 
 How many spaceships of each type of furniture should General Leia assign to this mission?  Formulate this as an optimization problem, with an objective function and constraints.  
 
+\begin{figure}[ht!]
+\centering
+    \includegraphics[width=0.8\textwidth]{pictures/Imperial_Invasion_of_Equestria}
+    \caption{Star Wars Imperial Invasion of Equestria}
+\end{figure}
+
 % http://starwars.wikia.com/wiki/Leia_Organa
 
 \subsection{New England Power}
@@ -112,6 +118,12 @@ One terawatt is 1,000 gigawatts.  Power plants A, B, C, D each have a base cost 
  How many gigawatts should we allocate from each power plant to Western and Eastern Massachusetts?  Formulate this as an optimization problem, with an objective function and constraints. \\
  
 (Hint: Define the decision variables $AW, BW, CW, DW$ as the amounts of gigawatts supplied to {\bf Western} Massachusetts from power plants A, B, C, D respectively.  Similarly, define the decision variables $AE, BE, CE, DE$ as the amounts of gigawatts supplied to {\bf Eastern} Massachusetts.)
+
+\begin{figure}[ht!]
+\centering
+    \includegraphics[width=0.8\textwidth]{pictures/resource_map_08}
+        \caption{Power plants in New England region}
+\end{figure}
 
 \end{document}
 

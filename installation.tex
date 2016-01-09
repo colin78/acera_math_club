@@ -61,7 +61,7 @@ using Cairo
 
 \item Open up ``jump\_start.jl''.  Click on ``View $\rightarrow$ Syntax $\rightarrow$ Julia'' to view the code with syntax highlighting.  
 
-\item (Optional) Click on ``Preferences $\rightarrow$ Color Scheme $\rightarrow$ Eiffel'' to change the color scheme.  
+%\item (Optional) Click on ``Preferences $\rightarrow$ Color Scheme $\rightarrow$ Eiffel'' to change the color scheme.  
 
 \end{enumerate}
 
@@ -74,11 +74,11 @@ using Cairo
 \item Create a new file in Sublime Text 2 named ``.juliarc.jl''.  
 
 \item In this file, type: cd(``\emph{path\_here}'').  In place of \emph{path\_here}, put the file path on the computer to the ``optimization'' folder.  For example, it might be: \\\\
-cd (``C:$\backslash\backslash$Users$\backslash\backslash$colin$\backslash\backslash$Documents$\backslash\backslash$optimization").  \\
+cd (``C:$\backslash\backslash$Users$\backslash\backslash$colin$\backslash\backslash$Documents$\backslash\backslash$optimization").  
 
-\item Search your computer for the file ``.julia\_history.jl''.  
+\item Open up a new Julia terminal and type ``homedir()'' to determine the home directory folder.   
 
-\item Save ``.juliarc.jl'' in the same folder as ``.julia\_history.jl''.   
+\item Save ``.juliarc.jl'' in the home directory folder, which is the output of the ``homedir()'' command run in the previous step.   
 
 \item To test that the working directory is set up correctly, open up a new Julia terminal and type in {\bf ;} and then {\bf pwd}.  Check that the folders match up.  
 
